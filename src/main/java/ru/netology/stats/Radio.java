@@ -1,4 +1,5 @@
 package ru.netology.stats;
+
 public class Radio {
     private int radioStationNumber;
     private int volume;
@@ -39,29 +40,30 @@ public class Radio {
 
     public void increaseVolume() {
         if (volume < 100) {
-            volume ++;
+            volume++;
         } else {
             volume = 100;
         }
     }
+
     public void reduceVolume() {
         if (volume > 0) {
-            volume --;
+            volume--;
         } else {
             volume = 0;
         }
     }
 
-    public void setVolume ( int volume){
-            if (volume < 0) {
-                return;
-            }
-            if (volume > 100) {
-                return;
-            }
-            this.volume = volume;
+    public void setVolume(int volume) {
+        if (volume < 0) {
+            return;
         }
+        if (volume > 100) {
+            return;
+        }
+        this.volume = volume;
     }
+}
 
 
 
