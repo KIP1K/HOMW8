@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
     @Test
     public void RadioChannelMax() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setRadioStationNumber(9);
 
         int expected = 9;
@@ -16,7 +16,7 @@ public class RadioTest {
 
     @Test
     public void RadioChannelAboweMax() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setRadioStationNumber(10);
 
         int expected = 0;
@@ -26,7 +26,7 @@ public class RadioTest {
 
     @Test
     public void RadioChannelBeloweMin() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setRadioStationNumber(-1);
 
         int expected = 0;
@@ -36,7 +36,7 @@ public class RadioTest {
 
     @Test
     public void RadioChannelMin() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setRadioStationNumber(0);
 
         int expected = 0;
@@ -46,7 +46,7 @@ public class RadioTest {
 
     @Test
     public void NextStation() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setRadioStationNumber(8);
 
         radio.next();
@@ -58,8 +58,8 @@ public class RadioTest {
 
     @Test
     public void NextStationMax() {
-        Radio radio = new Radio();
-        radio.setRadioStationNumber(9);
+        Radio radio = new Radio(11);
+        radio.setRadioStationNumber(10);
 
         radio.next();
 
@@ -70,7 +70,7 @@ public class RadioTest {
 
     @Test
     public void NextStationFromBeginning() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setRadioStationNumber(0);
 
         radio.next();
@@ -82,7 +82,7 @@ public class RadioTest {
 
     @Test
     public void prevStationFromBeginning() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setRadioStationNumber(0);
 
         radio.prev();
@@ -94,7 +94,7 @@ public class RadioTest {
 
     @Test
     public void prevStationMin() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setRadioStationNumber(1);
 
         radio.prev();
@@ -106,7 +106,7 @@ public class RadioTest {
 
     @Test
     public void prevStationMax() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setRadioStationNumber(9);
 
         radio.prev();
@@ -118,7 +118,7 @@ public class RadioTest {
 
     @Test
     public void volumeSet() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setVolume(55);
 
         int expected = 55;
@@ -128,7 +128,7 @@ public class RadioTest {
 
     @Test
     public void volumeMin() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setVolume(0);
 
         int expected = 0;
@@ -138,7 +138,7 @@ public class RadioTest {
 
     @Test
     public void volumeMax() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setVolume(100);
 
         int expected = 100;
@@ -148,7 +148,7 @@ public class RadioTest {
 
     @Test
     public void volumeAbowMax() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setVolume(101);
 
         int expected = 0;
@@ -158,7 +158,7 @@ public class RadioTest {
 
     @Test
     public void volumeBelowMin() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setVolume(-1);
 
         int expected = 0;
@@ -168,7 +168,7 @@ public class RadioTest {
 
     @Test
     public void volumeIncrease() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setVolume(55);
         radio.increaseVolume();
 
@@ -179,7 +179,7 @@ public class RadioTest {
 
     @Test
     public void volumeIncreaseMax() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setVolume(99);
         radio.increaseVolume();
 
@@ -190,7 +190,7 @@ public class RadioTest {
 
     @Test
     public void volumeIncreaseAboweMax() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setVolume(100);
         radio.increaseVolume();
 
@@ -201,7 +201,7 @@ public class RadioTest {
 
     @Test
     public void volumeIncreaseMin() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setVolume(0);
         radio.increaseVolume();
 
@@ -212,7 +212,7 @@ public class RadioTest {
 
     @Test
     public void volumeIncreaseAboweMin() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setVolume(1);
         radio.increaseVolume();
 
@@ -223,7 +223,7 @@ public class RadioTest {
 
     @Test
     public void volumeReduce() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setVolume(55);
         radio.reduceVolume();
 
@@ -234,7 +234,7 @@ public class RadioTest {
 
     @Test
     public void volumeReduceMin() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setVolume(1);
         radio.reduceVolume();
 
@@ -245,7 +245,7 @@ public class RadioTest {
 
     @Test
     public void volumeReduceBelowMin() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setVolume(0);
         radio.reduceVolume();
 
@@ -256,7 +256,7 @@ public class RadioTest {
 
     @Test
     public void volumeReduceMax() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setVolume(100);
         radio.reduceVolume();
 
