@@ -6,7 +6,7 @@ public class Radio {
     private int maxStation = 10;
 
     public Radio(int countStationNumber) {
-        this.maxStation=countStationNumber -1;
+        this.maxStation = countStationNumber - 1;
     }
 
     public void next() {
