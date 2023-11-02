@@ -3,7 +3,11 @@ package ru.netology.stats;
 public class Radio {
     private int radioStationNumber;
     private int volume;
-    private int maxStation = 10;
+    private int maxStation ;
+
+    public Radio() {
+        this.maxStation = 9;
+    }
 
     public Radio(int countStationNumber) {
         this.maxStation = countStationNumber - 1;
