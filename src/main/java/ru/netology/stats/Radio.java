@@ -3,9 +3,18 @@ package ru.netology.stats;
 public class Radio {
     private int radioStationNumber;
     private int volume;
+    private int maxStation ;
+
+    public Radio() {
+        this.maxStation = 9;
+    }
+
+    public Radio(int countStationNumber) {
+        this.maxStation = countStationNumber - 1;
+    }
 
     public void next() {
-        if (radioStationNumber <= 8) {
+        if (radioStationNumber < maxStation) {
             radioStationNumber++;
         } else {
             radioStationNumber = 0;
@@ -16,7 +25,7 @@ public class Radio {
         if (radioStationNumber >= 1) {
             radioStationNumber--;
         } else {
-            radioStationNumber = 9;
+            radioStationNumber = maxStation;
         }
     }
 
@@ -28,7 +37,7 @@ public class Radio {
         if (radioStationNumber < 0) {
             return;
         }
-        if (radioStationNumber > 9) {
+        if (radioStationNumber > maxStation) {
             return;
         }
         this.radioStationNumber = radioStationNumber;
